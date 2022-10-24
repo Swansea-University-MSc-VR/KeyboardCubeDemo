@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BonusController : MonoBehaviour
 {
-    public PlayerHealth playerHealthScript;
+    public PlayerHealth playerHealthScript;             //reference to our player health script
 
-    public float scoreValue;
+    public float scoreValue;                            //create a variable to carry our score value
 
 
 
@@ -22,9 +22,9 @@ public class BonusController : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)                                                  //when an object collides with the trigger....
     {
-        playerHealthScript.playerScore = playerHealthScript.playerScore + scoreValue;
-        Debug.LogWarning("The players current score is " + playerHealthScript.playerScore);
+        playerHealthScript.playerScore = playerHealthScript.playerScore + scoreValue;           //update the player score on the player health script
+        Debug.LogWarning("The players current score is " + playerHealthScript.playerScore);     //debug log out the current player score
     }
 }

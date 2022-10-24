@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerHealth playerHealthScript;
+    public PlayerHealth playerHealthScript;         //creates a new reference to the player health script we made
 
-    public float turnSpeed;
-    public float movementSpeed;
+    public float turnSpeed;                         //creates a floating point variable to control turn speed
+    public float movementSpeed;                     //creates a floating point variable to control movement speed
 
 
 
@@ -20,30 +20,30 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
-        if(playerHealthScript.playerCurrentHealth <= 0)
+        if(playerHealthScript.playerCurrentHealth <= 0)                 //if the player current health variable which is on the player health script is equal to or less than zero...
         {
-            Debug.LogError("Player movement disabled");
+            Debug.LogError("Player movement disabled");                 //statement to say movement is disabeled
         }
         else
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow))                                                  //when up key os pressed...
             {
-                this.transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);
+                this.transform.Translate(Vector3.forward * Time.deltaTime * movementSpeed);     //this object move forward
             }
 
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow))                                                //when down key is pressed...
             {
-                this.transform.Translate(Vector3.back * Time.deltaTime * movementSpeed);
+                this.transform.Translate(Vector3.back * Time.deltaTime * movementSpeed);        //this object move back
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))                                                //when left key is pressed...
             {
-                this.transform.Rotate(Vector3.up, -turnSpeed);
+                this.transform.Rotate(Vector3.up, -turnSpeed);                                  //rotate left
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow))                                               //when right key is pressed...
             {
-                this.transform.Rotate(Vector3.up, turnSpeed);
+                this.transform.Rotate(Vector3.up, turnSpeed);                                   //rotate to the right
             }
         }
     }

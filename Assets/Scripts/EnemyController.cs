@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public PlayerHealth playerHealthScript;
+    public PlayerHealth playerHealthScript;         //reference to our player health script
 
-    public float damageValue;
+    public float damageValue;                       //creates a variable to carry our damage value
 
 
 
@@ -22,9 +22,9 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)                                                              //when an object collides with our trigger
     {
-        playerHealthScript.playerCurrentHealth = playerHealthScript.playerCurrentHealth - damageValue;
-        Debug.Log("The players current health is " + playerHealthScript.playerCurrentHealth);
+        playerHealthScript.playerCurrentHealth = playerHealthScript.playerCurrentHealth - damageValue;      //remoce health from our player health script by damage value
+        Debug.Log("The players current health is " + playerHealthScript.playerCurrentHealth);               //debug log out the current player health
     }
 }
