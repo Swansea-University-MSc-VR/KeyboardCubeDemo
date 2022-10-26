@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public float playerMaxHealth;               //creates a variable to carry the player max health value
     public float playerCurrentHealth;           //creates a variable to carry the players current health value
+
+    public Slider healthSlider;                 //reference to health slider
 
     public Material deadMaterial;               //a reference to the material we will use when player has died
 
@@ -32,6 +35,8 @@ public class PlayerHealth : MonoBehaviour
     {
         scoreText.text = "Player Score:" + playerScore.ToString();                  //updates the player score message
         healthText.text = "Player Health: " + playerCurrentHealth.ToString();       //updates the player health message
+
+        healthSlider.value = playerCurrentHealth;                                   //set the slider value to the value of player health
 
         if (playerCurrentHealth <= 0)                                                       //if the player health is less than or equal to zero....
         {

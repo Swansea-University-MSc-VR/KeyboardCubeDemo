@@ -9,11 +9,10 @@ public class EnemyController : MonoBehaviour
     public float damageValue;                       //creates a variable to carry our damage value
 
 
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHealthScript = GameObject.FindGameObjectWithTag("PlayerTag").GetComponent<PlayerHealth>();        //find the gameobject with the tag ("PlayerTag") and get the component we are looking for
     }
 
     // Update is called once per frame
@@ -22,9 +21,17 @@ public class EnemyController : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter(Collider other)                                                              //when an object collides with our trigger
+    public void OnTriggerEnter(Collider other)                                                                  //when an object collides with our trigger
     {
-        playerHealthScript.playerCurrentHealth = playerHealthScript.playerCurrentHealth - damageValue;      //remoce health from our player health script by damage value
-        Debug.Log("The players current health is " + playerHealthScript.playerCurrentHealth);               //debug log out the current player health
+        if(other.tag == "PlayerTag")                                                                            //if the other collider has tag == "PlayerTag"...
+        {
+            playerHealthScript.playerCurrentHealth = playerHealthScript.playerCurrentHealth - damageValue;      //remoce health from our player health script by damage value
+            Debug.Log("The players current health is " + playerHealthScript.playerCurrentHealth);               //debug log out the current player health
+        }
+        else
+        {
+            Debug.LogError("NOT THE PLAYER");
+        }
+
     }
 }
