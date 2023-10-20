@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CubeDemo.unity
     guid: e724a22159e3a3e4bbd4abe5d4882728
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BlueCubeScene.unity
     guid: 35ed2f2959d2cc742baf9d64bf8c5bc0
   m_configObjects: {}
